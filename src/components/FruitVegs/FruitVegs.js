@@ -18,8 +18,8 @@ export default class FruitVegs extends Component {
     return (
       <Container>
         <Row className="pt-4">
-          {data.map(animalData => (
-            <FruitVeg key={animalData.Id} animalData={animalData} />
+          {data.map(fruitVegData => (
+            <FruitVeg key={fruitVegData.Id} fruitVegData={fruitVegData} />
           ))}
         </Row>
       </Container>

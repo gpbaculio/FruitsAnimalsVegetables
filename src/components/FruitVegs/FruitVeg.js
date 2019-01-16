@@ -27,13 +27,13 @@ export default class FruitVeg extends Component {
     const {
       Id,
       Title,
-      CollectiveNoun,
+      Genus,
       Description,
       Family,
       Width,
       Height,
       ImageURLs: { FullSize, Thumb }
-    } = this.props.animalData;
+    } = this.props.fruitVegData;
     return (
       <React.Fragment>
         {' '}
@@ -43,7 +43,7 @@ export default class FruitVeg extends Component {
           toggle={this.toggle}
           className={this.props.className}>
           <ModalHeader toggle={this.toggle}>
-            {Title} - {CollectiveNoun}
+            {Title} - {Genus}
           </ModalHeader>
           <ModalBody>
             <Card className="d-flex justify-content-center align-items-center">

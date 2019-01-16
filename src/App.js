@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import { Route, Switch } from 'react-router-dom';
 import Animals from './components/Animals';
-import FruitVeg from './components/FruitVeg';
+import FruitVegs from './components/FruitVegs';
 
 export default class App extends Component {
   render() {
@@ -11,7 +11,7 @@ export default class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/(animals)?" component={Animals} />
-          <Route exact path="/fruitVeg" component={FruitVeg} />
+          <Route exact path="/fruitVeg" component={FruitVegs} />
         </Switch>
       </React.Fragment>
     );
