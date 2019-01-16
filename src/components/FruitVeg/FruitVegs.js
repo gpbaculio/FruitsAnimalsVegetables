@@ -9,7 +9,7 @@ export default class FruitVegs extends Component {
   };
   componentDidMount = async () => {
     const { data } = await axios.get(
-      'http://styleguide.effectivedigital.com/interview/api/fruitveg'
+      'https://styleguide.effectivedigital.com/interview/api/fruitveg'
     );
     this.setState({ data });
   };
