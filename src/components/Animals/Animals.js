@@ -9,7 +9,7 @@ export default class Animals extends Component {
   };
   componentDidMount = async () => {
     const { data } = await axios.get(
-      'https://styleguide.effectivedigital.com/interview/api/animals'
+      'http://styleguide.effectivedigital.com/interview/api/animals'
     );
     this.setState({ data });
   };
