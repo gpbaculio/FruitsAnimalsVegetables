@@ -61,7 +61,7 @@ export default class FruitVeg extends Component {
               />
               <CardBody className="d-flex justify-content-center flex-column align-items-center">
                 <CardTitle>
-                  {Title} - {CollectiveNoun}
+                  {Title} - {Genus}
                 </CardTitle>
                 <CardSubtitle>{Family}</CardSubtitle>
                 <CardText style={{ textAlign: 'justify' }}>
@@ -83,7 +83,7 @@ export default class FruitVeg extends Component {
             />
             <CardBody className="d-flex justify-content-center flex-column align-items-center">
               <CardTitle>
-                {Title} - {CollectiveNoun}
+                {Title} - {Genus}
               </CardTitle>
               <CardSubtitle>{Family}</CardSubtitle>
               <CardText style={{ textAlign: 'justify' }}>
