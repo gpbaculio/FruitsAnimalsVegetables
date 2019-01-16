@@ -1,26 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Row, Col } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'rc-menu/assets/index.css';
+import Menu, { SubMenu, Item as MenuItem } from 'rc-menu';
+import verticals from './json/verticals';
+import courses from './json/courses';
+import categories from './json/categories';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <div className="w-25 mt-5">
+              <Menu mode="vertical" openAnimation="zoom">
+                {verticals.map(({ Name: VerticalName, Id: VerticalId }) => (
+                  <SubMenu
+                    title={VerticalName}
+                    key={`${VerticalName}${VerticalId}`}>
+                    {categories
+                      .filter(({ Verticals }) => VerticalId === Verticals)
+                      .map(({ Id: CategoriesId, Name: CategoriesName }) => (
+                        <SubMenu
+                          key={`${CategoriesName}${CategoriesId}`}
+                          title={
+                            <span style={{ paddingRight: '20px' }}>
+                              {CategoriesName}
+                            </span>
+                          }>
+                          {courses
+                            .filter(
+                              ({ Categories }) => Categories === CategoriesId
+                            )
+                            .map(({ Id, Name, Author, Categories, State }) => (
+                              <MenuItem key={`${Name}${Id}`}>{Name}</MenuItem>
+                            ))}
+                        </SubMenu>
+                      ))}
+                  </SubMenu>
+                ))}
+              </Menu>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
