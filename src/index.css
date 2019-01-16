@@ -12,3 +12,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.modal-content {
+  width: max-content !important;
+}
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 800px !important;
+    margin: 1.75rem auto;
+}}
